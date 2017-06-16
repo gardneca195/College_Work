@@ -6,11 +6,13 @@ public class player{
     public boolean fold;
     public boolean call;
     public boolean sitOut;
+    public boolean dealer;
 
-    public player(String name){
+    public player(String name, int cash){
         this.call = false;
         this.fold = false;
         this.sitOut = false;
+        this.dealer = false;
         this.name = name;
         this.cash = 1000;
     	hand[0] = "";
