@@ -1,0 +1,44 @@
+(defun deep-subst (old new l)
+  (cond
+   ((null l) 
+     nil
+   )
+   ((listp (car l))
+    (cons (deep-subst old new (car l)) (deep-subst old new (cdr l)))
+   )
+   ((eq old (car l)) 
+    (cons new (deep-subst old new (cdr l)))
+   )
+   (T   
+    (cons (car l) (deep-subst old new (cdr l)))
+   )
+  )
+)
+
+(defun subst-bindings (exp bindinglist)
+  (cond 
+    ( (null bindinglist) 
+       exp )
+    (T 
+       (deep-subst ... 
+    ))))
+
+(defun simplify-triple(op left-arg right-arg)
+  (cond
+    ( (and (numberp left-arg) (numberp right-arg))
+      (eval (list op left-arg right-arg)))
+    ( (and (eq op '+) ....
+       ... ))
+    (T
+      (list op left-arg right-arg))))
+
+(defun simplify (exp)
+  (cond
+    ( (listp exp)
+        (...
+    (T 
+        exp)))
+
+(defun evalexp (exp binding-list)
+  (...
+)
